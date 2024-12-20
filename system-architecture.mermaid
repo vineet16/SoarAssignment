@@ -1,0 +1,20 @@
+graph TD
+    A[Client] --> B[API Gateway/Rate Limiter]
+    B --> C[Authentication Middleware]
+    C --> D[Authorization/RBAC]
+    D --> E[API Routes]
+    
+    E --> F[School Routes]
+    E --> G[Classroom Routes]
+    E --> H[Student Routes]
+    
+    F --> I[MongoDB]
+    G --> I
+    H --> I
+    
+    subgraph Database Models
+    I --> J[School Model]
+    I --> K[Classroom Model]
+    I --> L[Student Model]
+    I --> M[User Model]
+    end
